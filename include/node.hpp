@@ -1,3 +1,8 @@
+#ifndef NODE_HPP
+#define NODE_HPP
+
+#include "../src/logging/logging.hpp"
+
 class Node
 {
 private:
@@ -12,6 +17,12 @@ public:
 
     Node(int value, Node* parent): value_{value}, parent_{parent} {}
 
+// getters
+    Node* GetParent() const
+    {
+        return parent_;
+    }
+    
     Node* GetLeft() const
     {
         return left_;
@@ -21,4 +32,25 @@ public:
     {
         return right_;
     }
-}
+
+// setters
+    bool SetParent(Node* parent)
+    {
+        Assert(parent == nullptr);
+        parent_ = parent;
+    }
+
+    bool SetLeft(Node* left)
+    {
+        Assert(left == nullptr);
+        left_ = left;
+    }
+
+    bool SetRight(Node* right)
+    {
+        Assert(right == nullptr)
+        right_ = right;
+    }
+};
+
+#endif // NODE_HPP guard
